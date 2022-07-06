@@ -1,0 +1,37 @@
+Pasos para crear un Servidor Express
+
+instalacion:
+
+	carpeta nueva
+	npm init --yes
+	npm i express morgan cors
+	npm i promise-mysql@3.3.1
+	npm install -g tyepscript
+	npm i nodemon -D		(-D es para que instale la dependencia por separado, para que sea una dependencia de desarrollo y no de produccion)
+	npm i @types/express -D		(es para el autocompletado de datos de la dependencia)
+	npm i @types/morgan @types/cors -D
+	
+Expresjecutar TypeScript:
+	tsc --init
+	cambiar el targer "target": "es5", a "target": "es6",
+	habilitar la carpeta de codigo 	"outDir": "./build",
+	ejecutar typescript:  tsc
+	
+Configurar package.json
+	creamos un comando para que  vigile los cambios en typescript en la carpeta "/src"
+		Scripts:
+		"scripts": {
+			"build": "tsc -w"
+		},
+	
+	
+	creamons un comando para que NODEMON vigile cambios en javascript en index.js de la carpeta build
+		"scripts": {
+			"dev": "nodemon build/index.js"
+		}
+
+
+Ejecutar codigo
+	npm run build
+	npm run dev
+	
